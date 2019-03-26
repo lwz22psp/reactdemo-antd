@@ -18,7 +18,7 @@ class Banner extends React.PureComponent {
           {...dataSource.textWrapper}
         >
           <div key="title" {...dataSource.title}>
-          <img src={require('../source/pegin.png')} width="120%" alt="img" />
+          <img src={require('../source/pegin.png')} width="80%" alt="img" />
           </div>
             <div key="content" {...dataSource.content}>
             {dataSource.content.children}
