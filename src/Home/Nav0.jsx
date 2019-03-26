@@ -62,7 +62,7 @@ class Header extends React.Component {
             animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
             {...dataSource.logo}
           >
-            <img width="40%" src={dataSource.logo.children} alt="img" />
+            <img width="20%" src={dataSource.logo.children} alt="img" />
           </TweenOne>
           {isMobile && (
             <div
