@@ -1,10 +1,11 @@
 import React from 'react';
+import img from '../source/pegin.png'
 export const Nav00DataSource = {
   wrapper: { className: 'header0 home-page-wrapper' },
   page: { className: 'home-page' },
   logo: {
     className: 'header0-logo',
-    children: 'https://os.alipayobjects.com/rmsportal/mlcYmsRilwraoAe.svg',
+    children: img,
   },
   Menu: {
     className: 'header0-menu',
@@ -22,11 +23,11 @@ export const Banner00DataSource = {
   textWrapper: { className: 'banner0-text-wrapper' },
   title: {
     className: 'banner0-title',
-    children: 'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+    children: require('../source/pegin.png'),
   },
   content: {
     className: 'banner0-content',
-    children: '一个高效的页面动画解决方案',
+    children: '老西门吓唔搞',
   },
   button: { className: 'banner0-button', children: 'Learn More' },
 };
@@ -52,8 +53,8 @@ export const Content00DataSource = {
             children:
               'https://zos.alipayobjects.com/rmsportal/WBnVOjtIlGWbzyQivuyq.png',
           },
-          title: { className: 'content0-title', children: '一站式业务接入' },
-          content: { children: '支付、结算、核算接入产品效率翻四倍' },
+          title: { className: 'content0-title', children: '我们' },
+          content: { children: '广告位文案' },
         },
       },
       {
@@ -69,9 +70,9 @@ export const Content00DataSource = {
           },
           title: {
             className: 'content0-title',
-            children: '一站式事中风险监控',
+            children: '木得',
           },
-          content: { children: '在所有需求配置环节事前风险控制和质量控制能力' },
+          content: { children: '广告位文案' },
         },
       },
       {
@@ -85,8 +86,8 @@ export const Content00DataSource = {
             children:
               'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png',
           },
-          title: { className: 'content0-title', children: '一站式数据运营' },
-          content: { children: '沉淀产品接入效率和运营小二工作效率数据' },
+          title: { className: 'content0-title', children: '服务' },
+          content: { children: '广告位文案' },
         },
       },
     ],
@@ -100,11 +101,11 @@ export const Content10DataSource = {
     children: 'https://zos.alipayobjects.com/rmsportal/nLzbeGQLPyBJoli.png',
   },
   textWrapper: { className: 'content1-text', md: 14, xs: 24 },
-  title: { className: 'content1-title', children: '企业资源管理' },
+  title: { className: 'content1-title', children: '代肝' },
   content: {
     className: 'content1-content',
     children:
-      '云资源集中编排、弹性伸缩、持续发布和部署，高可用及容灾。云资源集中编排、弹性伸缩、持续发布和部署，高可用及容灾。云资源集中编排、弹性伸缩、持续发布和部署，高可用及容灾。',
+      '阿鸡全身是肝',
   },
 };
 export const Content30DataSource = {
@@ -116,13 +117,13 @@ export const Content30DataSource = {
     children: [
       {
         name: 'title',
-        children: '蚂蚁金融云提供专业的服务',
+        children: '前排广告位',
         className: 'title-h1',
       },
       {
         name: 'content',
         className: 'title-content',
-        children: '基于阿里云强大的基础资源',
+        children: '前排广告位',
       },
     ],
   },
@@ -141,11 +142,11 @@ export const Content30DataSource = {
               'https://zos.alipayobjects.com/rmsportal/ScHBSdwpTkAHZkJ.png',
           },
           textWrapper: { className: 'content3-text' },
-          title: { className: 'content3-title', children: '企业资源管理' },
+          title: { className: 'content3-title', children: '广告位' },
           content: {
             className: 'content3-content',
             children:
-              '云资源集中编排、弹性伸缩、持续发布和部署，高可用及容灾。',
+              '后排广告位',
           },
         },
       },
@@ -161,11 +162,11 @@ export const Content30DataSource = {
               'https://zos.alipayobjects.com/rmsportal/NKBELAOuuKbofDD.png',
           },
           textWrapper: { className: 'content3-text' },
-          title: { className: 'content3-title', children: '云安全' },
+          title: { className: 'content3-title', children: '广告位' },
           content: {
             className: 'content3-content',
             children:
-              '按金融企业安全要求打造的完整云上安全体系，全方位保障金融应用及数据安全。',
+              '后排广告位',
           },
         },
       },
@@ -181,11 +182,11 @@ export const Content30DataSource = {
               'https://zos.alipayobjects.com/rmsportal/xMSBjgxBhKfyMWX.png',
           },
           textWrapper: { className: 'content3-text' },
-          title: { className: 'content3-title', children: '云监控' },
+          title: { className: 'content3-title', children: '广告位' },
           content: {
             className: 'content3-content',
             children:
-              '分布式云环境集中监控，统一资源及应用状态视图，智能分析及故障定位。',
+              '后排广告位',
           },
         },
       },
@@ -201,11 +202,11 @@ export const Content30DataSource = {
               'https://zos.alipayobjects.com/rmsportal/MNdlBNhmDBLuzqp.png',
           },
           textWrapper: { className: 'content3-text' },
-          title: { className: 'content3-title', children: '移动' },
+          title: { className: 'content3-title', children: '广告位' },
           content: {
             className: 'content3-content',
             children:
-              '一站式移动金融APP开发及全面监控；丰富可用组件，动态发布和故障热修复。',
+              '后排广告位',
           },
         },
       },
@@ -221,11 +222,11 @@ export const Content30DataSource = {
               'https://zos.alipayobjects.com/rmsportal/UsUmoBRyLvkIQeO.png',
           },
           textWrapper: { className: 'content3-text' },
-          title: { className: 'content3-title', children: '分布式中间件' },
+          title: { className: 'content3-title', children: '广告位' },
           content: {
             className: 'content3-content',
             children:
-              '金融级联机交易处理中间件，大规模分布式计算机，数万笔/秒级并发能力，严格保证交易数据统一性。',
+              '后排广告位',
           },
         },
       },
@@ -241,11 +242,11 @@ export const Content30DataSource = {
               'https://zos.alipayobjects.com/rmsportal/ipwaQLBLflRfUrg.png',
           },
           textWrapper: { className: 'content3-text' },
-          title: { className: 'content3-title', children: '大数据' },
+          title: { className: 'content3-title', children: '广告位' },
           content: {
             className: 'content3-content',
             children:
-              '一站式、全周期大数据协同工作平台，PB级数据处理、毫秒级数据分析工具。',
+              '后排广告位',
           },
         },
       },
@@ -259,7 +260,7 @@ export const Footer00DataSource = {
     className: 'copyright',
     children: (
       <span>
-        ©2018 <a href="https://motion.ant.design">Ant Motion</a> All Rights
+        ©2018 <a href="https://github.com/lwz22psp/reactdemo-antd">hapiniu</a> All Rights
         Reserved
       </span>
     ),
