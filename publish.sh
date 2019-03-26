@@ -13,6 +13,7 @@ echo "git pull finish"
 #停用旧容器
 #building
 echo "building"
+yarn install
 umi build
 
 docker-compose down
