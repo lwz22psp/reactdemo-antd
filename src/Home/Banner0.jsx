@@ -1,9 +1,31 @@
 import React from 'react';
-import { Button, Icon } from 'antd';
+import { Button, Icon,Modal } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 
 class Banner extends React.PureComponent {
+  state = { visible: false }
+
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+
+  handleOk = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+
   render() {
     const { ...currentProps } = this.props;
     const { dataSource } = currentProps;
@@ -23,9 +45,18 @@ class Banner extends React.PureComponent {
             <div key="content" {...dataSource.content}>
             {dataSource.content.children}
           </div>
-          <Button ghost key="button" {...dataSource.button}>
+          <Button ghost key="button" onClick={this.showModal} {...dataSource.button}>
             {dataSource.button.children}
           </Button>
+          <Modal
+          title={dataSource.button.children}
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+        >
+          <p>点你妹啊，阿鸡</p>
+          <p>快出需求</p>
+        </Modal>
         </QueueAnim>
         <TweenOne
           animation={{
