@@ -19,12 +19,7 @@ class Banner extends React.PureComponent {
     });
   }
 
-  handleCancel = (e) => {
-    console.log(e);
-    this.setState({
-      visible: false,
-    });
-  }
+
 
   render() {
     const { ...currentProps } = this.props;
@@ -52,7 +47,7 @@ class Banner extends React.PureComponent {
           title={dataSource.button.children}
           visible={this.state.visible}
           onOk={this.handleOk}
-          onCancel={this.handleCancel}
+          
         >
           <p>点你妹啊，阿鸡</p>
           <p>快出需求</p>
