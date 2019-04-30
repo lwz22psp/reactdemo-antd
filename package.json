@@ -1,15 +1,19 @@
 {
   "dependencies": {
+    "@rebass/grid": "^6.0.0",
     "antd": "^3.15.2",
+    "axios": "^0.18.0",
     "enquire-js": "^0.2.1",
     "rc-banner-anim": "^2.2.2",
     "rc-queue-anim": "^1.6.12",
     "rc-scroll-anim": "^2.5.6",
     "rc-tween-one": "^2.3.4",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "umi-plugin-react": "^1.7.2"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
