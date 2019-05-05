@@ -10,7 +10,7 @@ export const Nav00DataSource = {
   Menu: {
     className: 'header0-menu',
     children: [
-      { name: 'item0', a: { children: '咕' } },
+      { name: 'item0', a: { children: '注册' ,href:'/regist',target:'_blank' } },
       { name: 'item1', a: { children: '咕' } },
       { name: 'item2', a: { children: '咕' } },
     ],
