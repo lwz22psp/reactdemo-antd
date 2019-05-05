@@ -6,11 +6,10 @@ export default {
         }
       ],
     ],
-    proxy: {
-      "/api": {
-        target: "http://47.102.218.92:8080/",
-        changeOrigin: true,
-        "pathRewrite": { "^/api" : "" }
-      }
-    }
+    // proxy: {
+    //   "/api": {
+    //     target: "http://47.102.218.92:8080/",
+    //     changeOrigin: true
+    //   }
+    // }
   }

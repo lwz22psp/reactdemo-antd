@@ -2,7 +2,7 @@ import axios from 'axios';
 import { message } from 'antd';
 
 export function RegistUser(RegistUserModel){
-const url = " /api/user/regist";
+const url = "/api/user/regist";
 
 axios.post(url, RegistUserModel)
   .then(function (response) {
