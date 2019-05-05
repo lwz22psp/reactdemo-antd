@@ -1,7 +1,7 @@
 import {
-  Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete,
+  Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Alert
 } from 'antd';
-import{RegistUserModel,RegistUser} from '../../controller/UserController'
+import { RegistUserModel, RegistUser } from '../../controller/UserController'
 
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
@@ -36,7 +36,7 @@ const residences = [{
 export default class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
-    autoCompleteResult: [],
+    autoCompleteResult: []
   };
 
   handleSubmit = (e) => {
@@ -45,12 +45,12 @@ export default class RegistrationForm extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values);
         const form = this.props.form;
-        RegistUserModel.email=form.getFieldValue('email');
-        RegistUserModel.userName=form.getFieldValue('username');
-        RegistUserModel.userPwd=form.getFieldValue('password');
-        RegistUserModel.phone=form.getFieldValue('phone');
-        RegistUserModel.nickName=form.getFieldValue('nickname');
-        RegistUserModel.registCode=form.getFieldValue('captcha');
+        RegistUserModel.email = form.getFieldValue('email');
+        RegistUserModel.userName = form.getFieldValue('username');
+        RegistUserModel.userPwd = form.getFieldValue('password');
+        RegistUserModel.phone = form.getFieldValue('phone');
+        RegistUserModel.nickName = form.getFieldValue('nickname');
+        RegistUserModel.registCode = form.getFieldValue('captcha');
         RegistUser(RegistUserModel);
       }
     });
@@ -60,6 +60,8 @@ export default class RegistrationForm extends React.Component {
     const value = e.target.value;
     this.setState({ confirmDirty: this.state.confirmDirty || !!value });
   }
+
+ 
 
   compareToFirstPassword = (rule, value, callback) => {
     const form = this.props.form;
@@ -192,7 +194,7 @@ export default class RegistrationForm extends React.Component {
             <Input />
           )}
         </Form.Item>
-        
+
         <Form.Item
           label={(
             <span>
@@ -209,7 +211,7 @@ export default class RegistrationForm extends React.Component {
             <Input />
           )}
         </Form.Item>
-        
+
         <Form.Item
           label={(
             <span>
@@ -220,11 +222,11 @@ export default class RegistrationForm extends React.Component {
             </span>
           )}
         >
-         {getFieldDecorator('captcha', {
-                rules: [{ required: true, message: '请输入注册码' }],
-              })(
-                <Input />
-              )}
+          {getFieldDecorator('captcha', {
+            rules: [{ required: true, message: '请输入注册码' }],
+          })(
+            <Input />
+          )}
         </Form.Item>
         <Form.Item {...tailFormItemLayout}>
           {getFieldDecorator('agreement', {
