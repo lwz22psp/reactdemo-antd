@@ -23,6 +23,16 @@ let routes = [
     "component": require('../Regist/RegistrationForm.js').default
   },
   {
+    "path": "/Login",
+    "exact": true,
+    "component": require('../Login/index.js').default
+  },
+  {
+    "path": "/Login/NormalLoginForm",
+    "exact": true,
+    "component": require('../Login/NormalLoginForm.js').default
+  },
+  {
     "component": () => React.createElement(require('/Users/dark/.config/yarn/global/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: false })
   }
 ];

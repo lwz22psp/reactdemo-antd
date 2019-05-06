@@ -10,7 +10,6 @@ class Header extends React.Component {
     this.state = {
       phoneOpen: false,
       menuHeight: 0,
-      selectedKey:'0'
     };
     this.menu = React.createRef();
   }
@@ -64,7 +63,7 @@ class Header extends React.Component {
             animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
             {...dataSource.logo}
           >
-          <a href='/' >
+             <a href='/' >
             <img width="20%" src={dataSource.logo.children} alt="img" /></a>
           </TweenOne>
           {isMobile && (
@@ -87,7 +86,6 @@ class Header extends React.Component {
           >
             <Menu
               mode={isMobile ? 'inline' : 'horizontal'}
-              defaultSelectedKeys={[selectedKey]}
               theme={isMobile ? 'dark' : 'default'}
             >
               {navChildren}

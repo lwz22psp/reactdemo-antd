@@ -1,8 +1,8 @@
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
 import Nav0 from '../../Home/Nav0';
-import RegistrationForm from './RegistrationForm';
 import { Flex, Box } from '@rebass/grid';
+import NormalLoginForm from './NormalLoginForm';
 import {
     Typography,Form
 } from 'antd';
@@ -20,7 +20,7 @@ const { location } = window;
 const { Title } = Typography;
 
 
-export default class Regist extends React.Component {
+export default class Login extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -59,7 +59,8 @@ export default class Regist extends React.Component {
     }
 
     render() {
-        const WrappedRegistrationForm = Form.create({ name: 'register' })(RegistrationForm);
+        const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLoginForm);
+  
         //const { getFieldDecorator } = this.props.form;
         const children = [
             <Nav0
@@ -67,11 +68,11 @@ export default class Regist extends React.Component {
                 key="Nav0_0"
                 dataSource={Nav00DataSource}
                 isMobile={this.state.isMobile}
-                selectedKey="0"
+                selectedKey='1'
             />,
             <Flex key="Flex_0" >
                 <Box mx='auto' mt={30}>
-                    <Title>注册</Title>
+                    <Title>登陆</Title>
                 </Box>
             </Flex>
             ,
@@ -79,8 +80,8 @@ export default class Regist extends React.Component {
 
                 <Box width={1 / 3}  >
                 </Box>
-                <Box width={1 / 3} m='auto' >
-                    <WrappedRegistrationForm />
+                <Box width={1 / 5} m='auto' >
+                <WrappedNormalLoginForm />
                 </Box>
                 <Box width={1 / 3}  >
                 </Box>
