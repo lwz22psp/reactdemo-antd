@@ -1,8 +1,15 @@
 import React from 'react';
 import TweenOne from 'rc-tween-one';
 import { Menu } from 'antd';
+import cookie from 'react-cookies'
+import axios from 'axios';
 
 const Item = Menu.Item;
+const requestModel = {
+  header:{
+    token:''
+  }
+};
 
 class Header extends React.Component {
   constructor(props) {
@@ -10,9 +17,14 @@ class Header extends React.Component {
     this.state = {
       phoneOpen: false,
       menuHeight: 0,
-      selectedKey:'0'
+      selectedKey: '0',
+      userId:0,
+      userNickname:""
     };
     this.menu = React.createRef();
+    
+
+
   }
 
   /*
@@ -30,15 +42,53 @@ class Header extends React.Component {
     });
   };
 
+  logoutClick = () => {
+    cookie.remove("token");
+    location.reload();
+  };
+
+ componentWillMount=()=>{
+  const token= cookie.load("token");
+  const url = "/api/user/verifyToken";
+  var _this=this;
+  if(token==undefined||token==""){
+    ;
+  }else{
+    requestModel.header.token=token;
+    
+    axios.post(url, requestModel)
+    .then(function (response) {
+      console.log(response);
+      //response.data
+      if (response.data.code == 200) {
+        _this.setState({
+          userId:response.data.data.userId,
+          userNickname:response.data.data.nickName
+        });
+        _this.render();
+      } else {
+        //msg=response.data.msg;
+        //message.error(response.data.msg, 3)
+        cookie.remove("token");
+        location.reload();
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+ }
+
   render() {
+    
     const { ...props } = this.props;
-    const { dataSource, isMobile,selectedKey } = props;
+    const { dataSource, isMobile, selectedKey } = props;
     delete props.dataSource;
     delete props.isMobile;
     const { menuHeight, phoneOpen } = this.state;
     const navData = dataSource.Menu.children;
-    Menu.selectedKey=selectedKey;
-    const navChildren = Object.keys(navData).map((key, i) => (
+    Menu.selectedKey = selectedKey;
+     var navChildren = Object.keys(navData).map((key, i) => (
       <Item key={i.toString()} {...navData[key]}>
         <a
           {...navData[key].a}
@@ -49,6 +99,28 @@ class Header extends React.Component {
         </a>
       </Item>
     ));
+     
+    if (this.state.userId > 0) {
+      navChildren = [
+        <Item key="1">
+          <a
+
+            href={this.state.userId}
+          >
+            {this.state.userNickname}
+          </a>
+        </Item>,
+        <Item key="2">
+          <a
+            onClick={() => {
+              this.logoutClick();
+            }}
+          >
+            注销
+      </a>
+        </Item>
+      ];
+    }
     return (
       <TweenOne
         component="header"
@@ -64,8 +136,8 @@ class Header extends React.Component {
             animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
             {...dataSource.logo}
           >
-          <a href='/' >
-            <img width="20%" src={dataSource.logo.children} alt="img" /></a>
+            <a href='/' >
+              <img width="20%" src={dataSource.logo.children} alt="img" /></a>
           </TweenOne>
           {isMobile && (
             <div
