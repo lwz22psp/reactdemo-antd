@@ -67,7 +67,7 @@ export default class Regist extends React.Component {
                 key="Nav0_0"
                 dataSource={Nav00DataSource}
                 isMobile={this.state.isMobile}
-                selectedKey="0"
+                selectedkey="0"
             />,
             <Flex key="Flex_0" >
                 <Box mx='auto' mt={30}>

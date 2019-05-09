@@ -9,28 +9,42 @@ let Router = DefaultRouter;
 let routes = [
   {
     "path": "/",
-    "exact": true,
-    "component": require('../index.jsx').default
-  },
-  {
-    "path": "/Regist",
-    "exact": true,
-    "component": require('../Regist/index.js').default
-  },
-  {
-    "path": "/Regist/RegistrationForm",
-    "exact": true,
-    "component": require('../Regist/RegistrationForm.js').default
-  },
-  {
-    "path": "/Login",
-    "exact": true,
-    "component": require('../Login/index.js').default
-  },
-  {
-    "path": "/Login/NormalLoginForm",
-    "exact": true,
-    "component": require('../Login/NormalLoginForm.js').default
+    "component": require('../../layouts/index.js').default,
+    "routes": [
+      {
+        "path": "/",
+        "exact": true,
+        "component": require('../index.jsx').default
+      },
+      {
+        "path": "/Regist",
+        "exact": true,
+        "component": require('../Regist/index.js').default
+      },
+      {
+        "path": "/Regist/RegistrationForm",
+        "exact": true,
+        "component": require('../Regist/RegistrationForm.js').default
+      },
+      {
+        "path": "/Login",
+        "exact": true,
+        "component": require('../Login/index.js').default
+      },
+      {
+        "path": "/Login/NormalLoginForm",
+        "exact": true,
+        "component": require('../Login/NormalLoginForm.js').default
+      },
+      {
+        "path": "/Application",
+        "exact": true,
+        "component": require('../Application/index.js').default
+      },
+      {
+        "component": () => React.createElement(require('/Users/dark/.config/yarn/global/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: false })
+      }
+    ]
   },
   {
     "component": () => React.createElement(require('/Users/dark/.config/yarn/global/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: false })

@@ -9,8 +9,8 @@ export function RegistUser(RegistUserModel) {
       console.log(response);
       //response.data
       if (response.data.code == 200) {
-        message.success('注册成功', 3);
         cookie.save("token", response.data.token);
+        message.success('注册成功', 3,location.href='/application');
       } else {
         //msg=response.data.msg;
         message.error(response.data.msg, 3)
@@ -39,7 +39,7 @@ export function UserLogin(UserLoginModel) {
       //response.data
       if (response.data.code == 200) {
         cookie.save("token", response.data.token);
-        message.success('登陆成功', 3,location.href='/');
+        message.success('登陆成功', 3,location.href='/application');
       } else {
         //msg=response.data.msg;
         message.error(response.data.msg, 3)

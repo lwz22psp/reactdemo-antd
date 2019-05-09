@@ -68,7 +68,7 @@ export default class Login extends React.Component {
                 key="Nav0_0"
                 dataSource={Nav00DataSource}
                 isMobile={this.state.isMobile}
-                selectedKey='1'
+                selectedkey='1'
             />,
             <Flex key="Flex_0" >
                 <Box mx='auto' mt={30}>

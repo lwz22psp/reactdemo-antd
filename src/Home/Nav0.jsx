@@ -17,9 +17,10 @@ class Header extends React.Component {
     this.state = {
       phoneOpen: false,
       menuHeight: 0,
-      selectedKey: '0',
+      selectedkey: '0',
       userId:0,
-      userNickname:""
+      userNickname:"",
+      chickloginstatus:false
     };
     this.menu = React.createRef();
     
@@ -52,7 +53,10 @@ class Header extends React.Component {
   const url = "/api/user/verifyToken";
   var _this=this;
   if(token==undefined||token==""){
-    ;
+    if(_this.props.chickloginstatus){
+     
+      location.href='/';
+    }
   }else{
     requestModel.header.token=token;
     
@@ -70,6 +74,9 @@ class Header extends React.Component {
         //msg=response.data.msg;
         //message.error(response.data.msg, 3)
         cookie.remove("token");
+        if(_this.chickloginstatus){
+          location.href='/';
+        }
         location.reload();
       }
     })
@@ -104,8 +111,7 @@ class Header extends React.Component {
       navChildren = [
         <Item key="1">
           <a
-
-            href={this.state.userId}
+            href='/application'
           >
             {this.state.userNickname}
           </a>
