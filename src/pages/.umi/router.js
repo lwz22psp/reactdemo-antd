@@ -42,6 +42,11 @@ let routes = [
         "component": require('../Application/index.js').default
       },
       {
+        "path": "/Application/dashCalendar",
+        "exact": true,
+        "component": require('../Application/dashCalendar.js').default
+      },
+      {
         "component": () => React.createElement(require('/Users/dark/.config/yarn/global/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: false })
       }
     ]
