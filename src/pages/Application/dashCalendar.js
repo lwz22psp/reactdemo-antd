@@ -14,7 +14,6 @@ export default class app extends React.Component{
             <div>
                 <Spin spinning={this.state.loading}>
                     <Calendar onPanelChange={onPanelChange} />
-
                 </Spin>
           </div>
         );
