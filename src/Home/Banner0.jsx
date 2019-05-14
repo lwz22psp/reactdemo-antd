@@ -2,9 +2,13 @@ import React from 'react';
 import { Button, Icon,Modal } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
+import Barrage from './Barrage0';
+import Websocket from 'react-websocket';
 
 class Banner extends React.PureComponent {
-  state = { visible: false }
+  state = { visible: false ,
+    barrage:new Barrage('canvas')
+  }
 
   showModal = () => {
     this.setState({
@@ -18,7 +22,21 @@ class Banner extends React.PureComponent {
       visible: false,
     });
   }
+ 
 
+  componentDidMount(){
+    const canvas = this.refs.canvas;
+    this.state.barrage.init(canvas);
+  }
+
+  handleData(data) {
+    //let result = JSON.parse(data);
+    if(data!="连接成功"){
+      this.state.barrage.shoot(data);
+      this.state.barrage.draw();
+    }
+    //this.setState({count: this.state.count + result.movement});
+  }
 
 
   render() {
@@ -26,8 +44,14 @@ class Banner extends React.PureComponent {
     const { dataSource } = currentProps;
     delete currentProps.dataSource;
     delete currentProps.isMobile;
+    const url = 'ws://47.102.218.92:8080/websocket/'+Math.random() * 10+'/';
     return (
       <div {...currentProps} {...dataSource.wrapper}>
+      <Websocket url={url}
+              onMessage={this.handleData.bind(this)}/>
+      <canvas id="canvas" ref="canvas"  style={{position:"absolute",top:0,left:0,width:'100%'}}>
+        您的浏览器不支持canvas标签。
+      </canvas>
         <QueueAnim
           key="QueueAnim"
           type={['bottom', 'top']}
