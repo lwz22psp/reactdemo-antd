@@ -27,13 +27,13 @@ class Banner extends React.PureComponent {
   componentDidMount(){
     const canvas = this.refs.canvas;
     this.state.barrage.init(canvas);
+    this.state.barrage.draw();
   }
 
   handleData(data) {
     //let result = JSON.parse(data);
     if(data!="连接成功"){
       this.state.barrage.shoot(data);
-      this.state.barrage.draw();
     }
     //this.setState({count: this.state.count + result.movement});
   }
