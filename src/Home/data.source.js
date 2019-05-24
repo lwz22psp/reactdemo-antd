@@ -28,7 +28,7 @@ export const Banner00DataSource = {
     className: 'banner0-content',
     children: '老西门吓唔搞',
   },
-  button: { className: 'banner0-button', children: 'Learn More' },
+  button: { className: 'banner0-button', children: 'learn more' },
 };
 export const Content00DataSource = {
   wrapper: { className: 'home-page-wrapper content0-wrapper' },

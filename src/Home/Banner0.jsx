@@ -4,6 +4,7 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import Barrage from './Barrage0';
 import Websocket from 'react-websocket';
+import BannerTimeLine from './BannerTimeLine'
 
 class Banner extends React.PureComponent {
   state = { visible: false ,
@@ -16,7 +17,7 @@ class Banner extends React.PureComponent {
     });
   }
 
-  handleOk = (e) => {
+  handleCancel = (e) => {
     console.log(e);
     this.setState({
       visible: false,
@@ -70,11 +71,10 @@ class Banner extends React.PureComponent {
           <Modal
           title={dataSource.button.children}
           visible={this.state.visible}
-          onOk={this.handleOk}
-          
+          onCancel={this.handleCancel}
+          footer={null}
         >
-          <p>点你妹啊，阿鸡</p>
-          <p>快出需求</p>
+         <BannerTimeLine />
         </Modal>
         </QueueAnim>
         <TweenOne
