@@ -36,6 +36,7 @@ var timedate = new Date(this.state.time);
           <Timeline.Item>服务器扩容 2019-04-29</Timeline.Item>
           <Timeline.Item>注册登陆完成 2019-05-05</Timeline.Item>
           <Timeline.Item>首页弹幕初版完成 2019-05-15</Timeline.Item>
+          <Timeline.Item>公众号支持聊天🐔器人辣 2019-07-12</Timeline.Item>
         </Timeline>
       </div>
     );
