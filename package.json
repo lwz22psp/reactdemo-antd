@@ -13,7 +13,8 @@
     "react-dom": "^16.8.5",
     "react-router-breadcrumbs-hoc": "^3.2.0",
     "react-websocket": "^2.0.1",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "umi": "^2.8.11"
   },
   "devDependencies": {
     "umi-plugin-react": "^1.7.2"
