@@ -12,7 +12,7 @@ class Content extends React.PureComponent {
           <div {...children.icon}>
             <img src={children.icon.children} width="100%" alt="img" />
           </div>
-          <h3 {...children.title}>{children.title.children}</h3>
+          <h3 {...children.title}><a href={children.href} >{children.title.children}</a></h3>
           <div {...children.content}>{children.content.children}</div>
         </Col>
       );
