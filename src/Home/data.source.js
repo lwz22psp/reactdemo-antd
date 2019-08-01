@@ -89,7 +89,7 @@ export const Content00DataSource = {
           },
           title: { className: 'content0-title', children: '老西门Wiki' },
           content: { children: '阿鸡什么时候骗过你？真的在做了' },
-          href:"/wiki/"
+          href:"http://47.102.218.92:8082/"
         },
         
       },
