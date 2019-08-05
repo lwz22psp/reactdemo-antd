@@ -45,7 +45,7 @@ class Banner extends React.PureComponent {
     const { dataSource } = currentProps;
     delete currentProps.dataSource;
     delete currentProps.isMobile;
-    const url = 'wss://ws.oldwestgate.com/'+Math.random() * 10+'/';
+    const url = 'wss://www.oldwestgate.com/websocket/'+Math.random() * 10+'/';
     return (
       <div {...currentProps} {...dataSource.wrapper}>
       <Websocket url={url}
