@@ -87,9 +87,9 @@ export const Content00DataSource = {
             children:
               'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png',
           },
-          title: { className: 'content0-title', children: 'Wiki' },
+          title: { className: 'content0-title', children: '老西门Wiki' },
           content: { children: '阿鸡什么时候骗过你？真的在做了' },
-          href:"https://www.gitbook.com/"
+          href:"https://wiki.oldwestgate.com/"
         },
         
       },
