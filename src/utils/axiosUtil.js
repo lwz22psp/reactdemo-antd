@@ -11,7 +11,7 @@ function setToken(tokenValue){
 }
 
 export function axiosPost(url,data,callback){
-    axios.post(url, data,{header:{"Authorization":getToken()}})
+    axios.post(url, data,{headers:{"Authorization":getToken()}})
     .then(function (response) {
       console.log(response);
       //response.data

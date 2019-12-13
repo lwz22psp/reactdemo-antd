@@ -7,7 +7,7 @@ import {axiosPost} from '../utils/axiosUtil'
 const Item = Menu.Item;
 const requestModel = {
   header:{
-    token:''
+    
   }
 };
 
@@ -57,7 +57,7 @@ class Header extends React.Component {
       location.href='/';
     }
   }else{
-    requestModel.header.token=token;
+    
     
     axiosPost(url, requestModel, (data) => {
       _this.setState({
