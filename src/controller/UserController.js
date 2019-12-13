@@ -1,24 +1,14 @@
-import axios from 'axios';
+import {axiosPost} from "../utils/axiosUtil"
 import { message } from 'antd';
 import cookie from 'react-cookies'
 export function RegistUser(RegistUserModel) {
   const url = "/api/user/regist";
 
-  axios.post(url, RegistUserModel)
-    .then(function (response) {
-      console.log(response);
-      //response.data
-      if (response.data.code == 200) {
-        cookie.save("token", response.data.token);
-        message.success('注册成功', 3,location.href='/application');
-      } else {
-        //msg=response.data.msg;
-        message.error(response.data.msg, 3)
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  axiosPost(url, RegistUserModel, (data) => {
+    cookie.save("token", data.token);
+    message.success('注册成功', 3, location.href = '/application');
+  });
+
 }
 
 export const RegistUserModel = {
@@ -32,22 +22,10 @@ export const RegistUserModel = {
 
 export function UserLogin(UserLoginModel) {
   const url = "/api/user/login";
-
-  axios.post(url, UserLoginModel)
-    .then(function (response) {
-      console.log(response);
-      //response.data
-      if (response.data.code == 200) {
-        cookie.save("token", response.data.token);
-        message.success('登陆成功', 3,location.href='/application');
-      } else {
-        //msg=response.data.msg;
-        message.error(response.data.msg, 3)
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  axiosPost(url, UserLoginModel, (data) => {
+    cookie.save("token", data.token);
+    message.success('登陆成功', 3, location.href = '/application');
+  });
 }
 
 export const UserLoginModel = {
@@ -61,7 +39,7 @@ export const UserModel = {
   email: "",
   nickName: "",
   userId: "",
-  header:{
-    token:""
+  header: {
+    token: ""
   }
 }

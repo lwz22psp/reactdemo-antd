@@ -2,7 +2,7 @@ import React from 'react';
 import TweenOne from 'rc-tween-one';
 import { Menu } from 'antd';
 import cookie from 'react-cookies'
-import axios from 'axios';
+import {axiosPost} from '../utils/axiosUtil'
 
 const Item = Menu.Item;
 const requestModel = {
@@ -54,35 +54,20 @@ class Header extends React.Component {
   var _this=this;
   if(token==undefined||token==""){
     if(_this.props.chickloginstatus){
-     
       location.href='/';
     }
   }else{
     requestModel.header.token=token;
     
-    axios.post(url, requestModel)
-    .then(function (response) {
-      console.log(response);
-      //response.data
-      if (response.data.code == 200) {
-        _this.setState({
-          userId:response.data.data.userId,
-          userNickname:response.data.data.nickName
-        });
-        _this.render();
-      } else {
-        //msg=response.data.msg;
-        //message.error(response.data.msg, 3)
-        cookie.remove("token");
-        if(_this.chickloginstatus){
-          location.href='/';
-        }
-        location.reload();
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
+    axiosPost(url, requestModel, (data) => {
+      _this.setState({
+        userId:data.data.userId,
+        userNickname:data.data.nickName
+      });
+      _this.render();
     });
+
+    
   }
  }
 
