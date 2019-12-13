@@ -10,8 +10,17 @@ function setToken(tokenValue){
     cookie.save("token", tokenValue);
 }
 
+function getHeaders(){
+    const token = getToken();
+    if(token!=null){
+        return  {"Authorization":token};
+    }else{
+        return {};
+    }
+}
+
 export function axiosPost(url,data,callback){
-    axios.post(url, data,{headers:{"Authorization":getToken()}})
+    axios.post(url, data,{headers:getHeaders()})
     .then(function (response) {
       console.log(response);
       //response.data
