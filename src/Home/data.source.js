@@ -263,8 +263,8 @@ export const Footer00DataSource = {
     className: 'copyright',
     children: (
       <span>
-        ©2018 <a href="https://github.com/lwz22psp/reactdemo-antd">hapiniu</a> All Rights
-        Reserved
+        ©2018-2020 <a href="https://github.com/lwz22psp/reactdemo-antd">hapiniu</a> All Rights
+        Reserved ICP证：<a href="http://www.beian.miit.gov.cn">沪ICP备19026868</a>
       </span>
     ),
   },
